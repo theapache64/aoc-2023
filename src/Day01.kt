@@ -1,4 +1,22 @@
 fun main() {
+    fun part1(input: List<String>): Int {
+        return input.sumOf { inputLine ->
+            inputLine.mapNotNull {
+                it.digitToIntOrNull()
+            }.let {
+                "${it.first()}${it.last()}".toInt()
+            }
+        }
+    }
+
+
+    fun part2(input: List<String>): Int {
+        return input.sumOf { inputLine ->
+            val list = parseNumbers(inputLine)
+            "${list.first()}${list.last()}".toInt()
+        }
+    }
+
     // test if implementation meets criteria from the description, like:
     val testInput = readInput("Day01_test")
     check(part2(testInput) == 281)
@@ -31,23 +49,7 @@ private fun parseNumbers(line: String): List<Int> {
     return numbers
 }
 
-private fun part1(input: List<String>): Int {
-    return input.sumOf { inputLine ->
-        inputLine.mapNotNull {
-            it.digitToIntOrNull()
-        }.let {
-            "${it.first()}${it.last()}".toInt()
-        }
-    }
-}
 
-
-private fun part2(input: List<String>): Int {
-    return input.sumOf { inputLine ->
-        val list = parseNumbers(inputLine)
-        "${list.first()}${list.last()}".toInt()
-    }
-}
 
 private fun getEndsWithInt(word: String): Int? {
     return when {
