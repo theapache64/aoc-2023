@@ -1,3 +1,9 @@
+package _2023.day1
+
+import compareOrThrow
+import println
+import readInput
+
 fun main() {
     fun part1(input: List<String>): Int {
         return input.sumOf { inputLine ->
@@ -18,7 +24,7 @@ fun main() {
     }
 
     // test if implementation meets criteria from the description, like:
-    val testInput = readInput("Day01_test")
+    val testInput = readInput(path = "src/_2023/day1/Day01_test.txt")
     check(part2(testInput) == 281)
 
     // More tests
@@ -29,7 +35,7 @@ fun main() {
     compareOrThrow(parseNumbers("two3threeight"), listOf(2, 3, 3, 8))
 
     // Actual data
-    val input = readInput("Day01")
+    val input = readInput(path = "src/_2023/day1/Day01.txt")
     part1(input).println()
     part2(input).println()
 }
@@ -48,7 +54,6 @@ private fun parseNumbers(line: String): List<Int> {
     }
     return numbers
 }
-
 
 
 private fun getEndsWithInt(word: String): Int? {
