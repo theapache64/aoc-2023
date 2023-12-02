@@ -24,6 +24,8 @@ fun main() {
             val gameId = gameResult[1].toInt()
             val sets = gameResult[2].split(";")
             gameIds.add(gameId)
+
+            // checking if the game is impossible or not
             for (set in sets) {
                 val colors = set.split(",")
                     .map { it.trim() }
@@ -34,7 +36,7 @@ fun main() {
                     } ?: error("couldn't find color $pickedColor -> '$color'")
 
                     if (pickedCount.toInt() > cube.max) {
-                        // bad game
+                        // impossible game
                         gameIds.remove(gameId)
                         continue@gameLoop
                     }
