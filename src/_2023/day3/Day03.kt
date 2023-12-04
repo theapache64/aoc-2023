@@ -34,7 +34,6 @@ fun main() {
 
     fun part1(lines: List<String>): Int {
         val partNumbers = mutableListOf<Int>()
-        var numFound = 0
         val digits = mutableListOf<Int>()
         for ((lineIndex, line) in lines.withIndex()) {
             var digitStartIndex = -1
@@ -49,7 +48,6 @@ fun main() {
                         // last single digit
                         val digit = line[charIndex].digitToInt()
                         digits.add(digit)
-                        numFound++
                         isEnginePart(
                             lineIndex,
                             lines,
@@ -76,11 +74,6 @@ fun main() {
                         val digit = line.substring(digitStartIndex, realCharIndex).toInt()
                         digits.add(digit)
 
-                        if (digit == 132) {
-                            
-                        }
-
-                        numFound++
                         // check symbol around
                         isEnginePart(
                             lineIndex,
@@ -98,11 +91,6 @@ fun main() {
                 }
             }
         }
-        File("my_digit.txt").delete()
-        for (x in digits) {
-            File("my_digit.txt").appendText("$x\n")
-        }
-        
         
         return partNumbers.sum()
     }
