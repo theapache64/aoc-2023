@@ -24,15 +24,14 @@ fun main() {
             for (winningNumber in winningNumbers) {
                 for (myNumber in myNumbers) {
                     if (winningNumber == myNumber) {
-                        if (cardPoints < 1) {
+                        if (cardPoints <= 1) {
                             cardPoints++
                         } else {
-                            cardPoints *= cardPoints
+                            cardPoints *= 2
                         }
                     }
                 }
             }
-            println("QuickTag: :part1: $totalPoints")
             totalPoints += cardPoints
         }
         return totalPoints
