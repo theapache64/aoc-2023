@@ -1,8 +1,7 @@
-package _2023.day3
+package day03
 
 import println
 import readInput
-import java.io.File
 
 fun main() {
     fun isEnginePart(
@@ -180,15 +179,6 @@ fun main() {
                                 iLine.getOrNull(rx)?.isDigit() == false
                             ) {
                                 adjNumbers.add(currentChar.digitToInt())
-
-                                println(
-                                    mapOf(
-                                        "lx" to lx,
-                                        "rx" to rx,
-                                    )
-                                )
-                                println("QuickTag: :part2: geat line $lineIndex")
-                                println("QuickTag: :part2: added -> $lineIndex ->  $adjNumbers")
 
                                 if (adjNumbers.size > 2) {
                                     continue@gearLoop

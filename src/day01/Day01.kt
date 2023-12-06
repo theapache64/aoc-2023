@@ -1,4 +1,4 @@
-package _2023.day1
+package day01
 
 import compareOrThrow
 import println

@@ -1,8 +1,7 @@
-package _2023.day2
+package day02
 
 import println
 import readInput
-import kotlin.system.exitProcess
 
 private val gameRegex = "Game (?<gameId>\\d+):(?<sets>.+)".toRegex()
 
